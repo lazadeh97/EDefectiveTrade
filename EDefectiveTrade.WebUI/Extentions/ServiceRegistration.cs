@@ -7,15 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EDefectiveTrade.Data
+namespace EDefectiveTrade.WebUI.Extentions
 {
     public static class ServiceRegistration
     {
         public static void AddServices(this IServiceCollection services) 
         {
             services.AddDbContext<AppDbContext>(options =>
-                    options.UseSqlServer(Configuration.ConnectionString,
-                    providerOptions => providerOptions.EnableRetryOnFailure()));
+                    options.UseSqlServer(Configuration.ConnectionString));
         }
     }
 }

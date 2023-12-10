@@ -1,5 +1,7 @@
 using AutoMapper;
-using EDefectiveTrade.Data;
+using EDefectiveTrade.Data.DAL;
+using EDefectiveTrade.WebUI.Extentions;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,6 +9,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddServices();
 builder.Services.AddControllersWithViews();
+//builder.Services.AddDbContext<AppDbContext>(opts => {
+
+//    opts.UseSqlServer(builder.Configuration.GetConnectionString("SQLServerConnStr"));
+//});
 builder.Services.AddAutoMapper(typeof(Mapper));
 
 

@@ -11,9 +11,11 @@ namespace EDefectiveTrade.Data.DAL
 {
     public class AppDbContext: IdentityDbContext<AppUser, AppRole, string>
     {
-        public AppDbContext(DbContextOptions options) : base(options)
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         { }
 
+        public DbSet<AppUser> AppUsers { get; set; }
+        public DbSet<AppRole> AppRoles{ get; set; }
         public DbSet<City> Cities { get; set; }
         public DbSet<Country> Countries { get; set; }
         public DbSet<Help> Helps { get; set; }
