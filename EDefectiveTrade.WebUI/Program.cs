@@ -1,3 +1,4 @@
+using AutoMapper;
 using EDefectiveTrade.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,9 +7,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddServices();
 builder.Services.AddControllersWithViews();
+builder.Services.AddAutoMapper(typeof(Mapper));
+
+
 
 var app = builder.Build();
-
 
 if (!app.Environment.IsDevelopment())
 {
