@@ -9,5 +9,9 @@ namespace EDefectiveTrade.Business.DTOs.History
 {
     public class ProductHistoryDTO : BaseDTO
     {
+        public string Description { get; set; }
+        public int ViewCount { get; set; }
+        public Guid ProductId { get; set; }
+        public Guid ProductCategoryId { get; set; }
     }
 }

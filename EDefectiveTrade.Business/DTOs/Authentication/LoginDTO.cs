@@ -9,5 +9,7 @@ namespace EDefectiveTrade.Business.DTOs.Authentication
 {
     public class LoginDto : BaseDTO
     {
+        public string Email { get; set; }
+        public string Password { get; set; }
     }
 }

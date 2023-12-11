@@ -9,5 +9,7 @@ namespace EDefectiveTrade.Business.DTOs.Region
 {
     public class CountryDTO : BaseDTO
     {
+        public string Name { get; set; }
+        public string CountryCode { get; set; }
     }
 }
