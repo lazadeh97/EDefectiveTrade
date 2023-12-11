@@ -1,4 +1,6 @@
-﻿using System;
+﻿using EDefectiveTrade.Business.DTOs.Authentication;
+using FluentValidation;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +8,22 @@ using System.Threading.Tasks;
 
 namespace EDefectiveTrade.Business.Validators.Authenticate
 {
-    public class LoginDtoValidator
+    public class LoginDtoValidator : AbstractValidator<LoginDto>
     {
+        public LoginDtoValidator() 
+        {
+            RuleFor(x => x.Email)
+              .NotEmpty()
+              .NotNull()
+              .EmailAddress()
+              .MinimumLength(3)
+              .MaximumLength(30);
+
+            RuleFor(x => x.Password)
+                .NotEmpty()
+                .NotNull()
+                .MinimumLength(6)
+                .MaximumLength(100);
+        }
     }
 }

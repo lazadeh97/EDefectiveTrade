@@ -1,4 +1,5 @@
 using AutoMapper;
+using EDefectiveTrade.Business.Validators.Authenticate;
 using EDefectiveTrade.Data.DAL;
 using EDefectiveTrade.WebUI.Extentions;
 using Microsoft.EntityFrameworkCore;
@@ -9,13 +10,18 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddServices();
 builder.Services.AddControllersWithViews();
+builder.Services.AddAutoMapper(typeof(Mapper));
+//builder.Services.AddValidatorsFromAssemblyContaining<LoginDtoValidator>();
+
+//builder.Services.AddFluentValidation(conf =>
+//{
+//    conf.RegisterValidatorsFromAssembly(typeof(Program).Assembly);
+//    conf.AutomaticValidationEnabled = false;
+//});
 //builder.Services.AddDbContext<AppDbContext>(opts => {
 
 //    opts.UseSqlServer(builder.Configuration.GetConnectionString("SQLServerConnStr"));
 //});
-builder.Services.AddAutoMapper(typeof(Mapper));
-
-
 
 var app = builder.Build();
 

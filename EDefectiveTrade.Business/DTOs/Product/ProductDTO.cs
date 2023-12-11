@@ -15,7 +15,6 @@ namespace EDefectiveTrade.Business.DTOs.Product
         public decimal Price { get; set; }
         public string Description { get; set; }
         public Guid? ProductCategoryId { get; set; }
-        public ProductCategory ProductCategory { get; set; }
         public List<ProductImage> Images { get; set; }
         public AnnouncementType AnnouncementType { get; set; }
     }
