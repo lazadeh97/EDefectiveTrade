@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EDefectiveTrade.Data.DAL
+namespace EDefectiveTrade.Business.Validators.Authenticate
 {
-    internal class Class1
+    public class RegisterDtoValidator
     {
     }
 }

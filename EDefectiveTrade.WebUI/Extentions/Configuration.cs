@@ -14,7 +14,7 @@ namespace EDefectiveTrade.WebUI.Extentions
             get
             {
                 ConfigurationManager configurationManager = new();
-                configurationManager.SetBasePath(Path.Combine(Directory.GetCurrentDirectory(), "../../EDefectiveTrade.WebUI"));
+                configurationManager.SetBasePath(Path.Combine(Directory.GetCurrentDirectory(), "../EDefectiveTrade.WebUI"));
                 configurationManager.AddJsonFile("appsettings.json");
 
                 return configurationManager.GetConnectionString("SQLServerConnStr");
