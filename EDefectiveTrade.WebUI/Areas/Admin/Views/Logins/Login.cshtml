@@ -1,0 +1,74 @@
+﻿@model EDefectiveTrade.Business.DTOs.Authentication.LoginDto
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <link rel="shortcut icon" href="assets/css-dep/img/logo.ico">
+    <link rel="stylesheet" href="assets/css/plugins.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+</head>
+<body>
+
+    <form method="post"  class="mt-3 my-5">
+    <section class="auth-wrapper">
+        <div class="container">
+            <a class="btn btn-back" href="index.html">
+                <img src="assets/img/left.svg" alt="left" />
+                Geri
+            </a>
+
+            <img class="logo m-auto" src="assets/img/logo-1.svg" alt="logo" />
+            <div class="form-wrapper m-auto">
+                <h2 class="t-center">Kabinetə giriş</h2>
+
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Password" class="control-label"></label>
+                    <input asp-for="Password" class="form-control" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+@*
+                <input type="text" name="parol" placeholder="Parol" />
+                <input type="email" name="email" placeholder="Email" />*@
+
+               @* <a href="#" class="btn btn-primary w-100">Daxil ol</a>*@
+                    <div class="col-md-6 control-label">
+                        <input id="frmProduct" type="submit" value="Daxil ol" class="btn btn-primary btn-lg btn-block" tabindex="16" />
+
+                    </div>
+            </div>
+            <a href="#" class="t-center link">Qeydiyyatdan keç</a>
+        </div>
+        <footer>
+            <div class="container">
+                <a href="index.html">
+                    <img class="footer-logo" src="assets/img/logo-1.svg" alt="logo">
+                </a>
+                <p class="copyright">
+                    <img src="assets/img/copyright.svg" alt="">
+                    2023.Xarab.az
+                </p>
+                <a href="tel:+994552222222" class="contact-number">
+                    <img src="assets/img/phone.svg" alt="phone">
+                    +994552222222
+                </a>
+            </div>
+        </footer>
+    </section>
+    </form>
+    <script src="assets/js/plugins.min.js"></script>
+    <script src="assets/js/scripts.js"></script>
+</body>
+</html>

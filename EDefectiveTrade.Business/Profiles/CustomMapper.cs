@@ -14,15 +14,15 @@ using System.Threading.Tasks;
 
 namespace EDefectiveTrade.Business.Profiles
 {
-    public class Mapper : Profile
+    public class CustomMapper : Profile
     {
-        public Mapper() 
+        public CustomMapper() 
         {
             CreateMap<CityDTO, City>();
             CreateMap<CountryDTO, Country>();
             CreateMap<HelpDTO, Help>();
             CreateMap<ProductDTO, Product>();
-            CreateMap<ProductCategoryDTO, ProductCategory>();        
+            CreateMap<ProductCategoryDTO, ProductCategory>().ReverseMap();        
             CreateMap<ProductHistoryDTO, ProductHistory>();
             CreateMap<ProductImageDTO, ProductImage>();
         }
