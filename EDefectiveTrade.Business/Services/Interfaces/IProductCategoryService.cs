@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace EDefectiveTrade.Business.Services.Interfaces
 {
-    public interface IProductCategoryService:IGenericService<ProductCategoryDTO,ProductCategory>
+    public interface IProductCategoryService : IGenericService<ProductCategoryDTO, ProductCategory>
     {
     }
 }

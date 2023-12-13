@@ -10,50 +10,60 @@ using System.Threading.Tasks;
 
 namespace EDefectiveTrade.Data.Implementations
 {
-    public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : BaseEntity
+    public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : BaseEntity, new()
     {
-        protected readonly AppDbContext _dbContext;
-        protected readonly DbSet<TEntity> _entities;
+        private readonly AppDbContext _dbContext;
+        private DbSet<TEntity> _entities;
         public GenericRepository(AppDbContext dbContext)
         {
             _dbContext = dbContext;
             _entities = _dbContext.Set<TEntity>();
         }
-        public async Task<TEntity> AddAsync(TEntity item)
-        {
 
-            await _entities.AddAsync(item);
-            _dbContext.SaveChanges();
-            return item;
+        public async Task<TEntity> Create(TEntity entity)
+        {
+            _entities.Add(entity);
+            await _dbContext.SaveChangesAsync();
+            return entity;
         }
 
-        public void Delete(int id)
+        public async Task<TEntity> DeleteByIdAsync(string id)
         {
-            var dbItem = _entities.Find(id);
-            _entities.Remove(dbItem);
-            _dbContext.SaveChanges();
+            var existingEntity = await _entities.FirstOrDefaultAsync(x => x.Id == Guid.Parse(id));
+            if (existingEntity != null)
+            {
+                _entities.Remove(existingEntity);
+                await _dbContext.SaveChangesAsync();
+            }
+            else
+            {
+                return (TEntity)Enumerable.Empty<TEntity>();
+            }
+            return existingEntity;
         }
 
-        public async Task<TEntity> GetByIdAsync(int id)
+        public IQueryable<TEntity> GetAll()
         {
-            var dbItem = await _entities.FindAsync(id);
-            return dbItem;
+            var list = _entities.AsQueryable();
+            return list;
         }
 
-        public async Task<List<TEntity>> GetListAsync()
+        public async Task<TEntity> GetByIdAsync(string id)
         {
-            var dbItem = await _entities.ToListAsync();
-            return dbItem;
+            var entity = await _entities.FirstOrDefaultAsync(x => x.Id == Guid.Parse(id));
+            if (entity == null)
+            {
+                return (TEntity)Enumerable.Empty<TEntity>();
+            }
+            return entity;
         }
 
-        public TEntity Update(TEntity item)
+        public async Task<TEntity> Update(TEntity entity)
         {
-            var dbEntity = _entities.Find(item.Id);
-            item.CreatedDate = dbEntity.CreatedDate;
-            // item.UpdateDate = DateTime.Now;        
-            _entities.Update(item);
-            _dbContext.SaveChanges();
-            return item;
+            _dbContext.ChangeTracker.Clear();
+            _entities.Update(entity);
+            await _dbContext.SaveChangesAsync();
+            return entity;
         }
     }
 }

@@ -14,10 +14,9 @@ namespace EDefectiveTrade.WebUI.Areas.Admin.Controllers
             _service = service;
         }
 
-
         public async Task< IActionResult> Index()
         {
-            List<ProductCategoryDTO> categories=await _service.GetListAsync();
+            var categories=await _service.GetAllAsync();
 
             return View(categories);
         }
@@ -27,15 +26,62 @@ namespace EDefectiveTrade.WebUI.Areas.Admin.Controllers
             return View();
         }
         [HttpPost]
-        public async Task< IActionResult> Create(ProductCategoryDTO model)
+        public async Task<IActionResult> Create(ProductCategoryDTO productCategoryDTO)
         {
-          var item=  await _service.AddAsync(model);
-            if (item != null)
+            var response = await _service.Create(productCategoryDTO);
+            if (response !=null)
             {
                 TempData["success"] = "Kateqoriya uğurla əlavə edildi.";
                 return RedirectToAction("Index");
             }
-            return View(item);
+            return View(response);
+        }
+        public async Task<IActionResult> Update(Guid id)
+        {
+            var category = await _service.GetByIdAsync(id);
+            return View(category);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Update(ProductCategoryDTO productCategoryDTO)
+        {
+            //var category = await _service.GetByIdAsync(productCategoryDTO.Id);           
+            var result = await _service.Update(productCategoryDTO);
+            if (result != null)
+            {
+                TempData["success"] = "Kateqoriya uğurla dəyişdirildi.";
+                return RedirectToAction("Index");
+            }
+            return View(result);
+
+        }
+
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            var category = await _service.GetByIdAsync(id);
+
+            return View(category);
+        }
+
+        //[HttpPost]
+        //public async Task<IActionResult> Delete(ProductCategoryDTO entity)
+        //{
+        //    var result = await _service.DeleteByIdAsync(entity.Id);
+
+        //    if (result !=null)
+        //    {
+        //        return Json(new { success = true, message = "Category successfully deleted." });
+        //    }
+
+        //    return Json(new { success = false, message = "Category not found or deletion failed." });
+        //}
+
+        [HttpPost, ActionName("Delete")]
+        public async Task<IActionResult> Delete(ProductCategoryDTO entity)
+        {
+            var item = await _service.DeleteByIdAsync(entity.Id);
+            TempData["success"] = "Kateqoriya uğurla silindi.";
+            return RedirectToAction("Index");
         }
     }
 }

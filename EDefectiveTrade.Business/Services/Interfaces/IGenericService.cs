@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace EDefectiveTrade.Business.Services.Interfaces
 {
-    public interface IGenericService<TDto, TEntity> where TDto : class where TEntity : class
+    public interface IGenericService<TDTO, TEntity> where TDTO : class where TEntity : class
     {
-        public Task<TDto> AddAsync(TDto item);
-        public Task<TDto> GetByIdAsync(int id);
-        public Task<List<TDto>> GetListAsync();
-        public void Delete(int id);
-        public TDto Update(TDto item);
+        Task<TDTO> GetByIdAsync(Guid id);
+        Task<IEnumerable<TDTO>> GetAllAsync();
+
+        Task<TDTO> Create(TDTO entity);
+        Task<TDTO> Update(TDTO entity);
+        Task<TDTO> DeleteByIdAsync(Guid id);
     }
 }
