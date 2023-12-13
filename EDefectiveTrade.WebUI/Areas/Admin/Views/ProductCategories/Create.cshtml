@@ -15,36 +15,28 @@
 
                 <div class="col-6">
                     <div class="form-group">
-                        <label asp-for="Name" class="control-label"></label>
+                        <label asp-for="Name" class="control-label">Adı</label>
                         <input asp-for="Name" class="form-control" />
                         <span asp-validation-for="Name" class="text-danger"></span>
                     </div>
                 </div>
-                <div class="col-6">
+                <div class="col-6 mb-5">
                     <div class="form-group">
-                        <label asp-for="Description" class="control-label"></label>
+                        <label asp-for="Description" class="control-label">Açıqlaması</label>
                         <input asp-for="Description" class="form-control" />
                         <span asp-validation-for="Description" class="text-danger"></span>
                     </div>
                 </div>
-
-
-
             </div>
-            <div class="row">
-
+    
+            <div class="row justify-content-around">
                 <div class="col-md-6 control-label">
-                    @Html.ActionLink("Listə Geri Dön", "Index", "ProductCategories", null, new { @class = "btn btn-primary btn-lg btn-block" })
-
+                    @Html.ActionLink("Siyahıya geri qayıt", "Index", "ProductCategories", null, new { @class = "btn btn-primary btn-lg btn-block" })
                 </div>
                 <div class="col-md-6 control-label">
-                    <input id="frmProductCat" type="submit" value="Yarat" class="btn btn-primary btn-lg btn-block" tabindex="16" />
-
+                    <input id="frmProductCat" type="submit" value="Kateqoriya əlavə et" class="btn btn-primary btn-lg btn-block" tabindex="16" />
                 </div>
-
             </div>
-
         </form>
-
     </div>
 </div>

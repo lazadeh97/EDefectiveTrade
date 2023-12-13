@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
@@ -12,17 +11,16 @@
             <div class="widget-header">
                 <div class="row">
 
-                    <div class="col-6">
-                        <h2 class="text-primary">
+                    <div class="col-10">
+                        <h5 class="text-primary">
                             Kategoriya siyahısı
-                        </h2>
+                        </h5>
                     </div>
-                    <div class="col-6 text-right">
+                    <div class="col-2 text-right mb-4">
                         <a asp-controller="ProductCategories" asp-action="Create" class="btn btn-primary">
-                            <i class="bi bi-plus-circle"></i>&nbsp; Yeni kateqoriya yarad
+                            <i class="bi bi-plus-circle"></i>&nbsp;Yeni kateqoriya yarat
                         </a>
                     </div>
-
                 </div>
             </div>
             <div class="widget-content widget-content-area">
@@ -30,39 +28,31 @@
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th class="text-center">#</th>
-                                <th>Ad</th>
-                                <th>Açıqlama</th>
-                                <th class="text-center">Action</th>
+                                <th class="text-center" hidden="hidden">#</th>
+                                <th class="text-center">Ad</th>
+                                <th class="text-center">Açıqlama</th>
+                                <th class="text-center">Əməliyyatlar</th>
                             </tr>
                         </thead>
                         <tbody>
                             @{
-
                                 foreach (var item in Model)
                                 {
                                     <tr>
-                                        <td class="text-center">@item.Id</td>
+                                        <td class="text-center" hidden="hidden">@item.Id</td>
                                         <td class="text-center">@item.Name</td>
                                         <td class="text-center">@item.Description</td>
                                         <td class="text-center" role="group">
-                                            <a asp-controller="ProductCategories" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger" aria-current="page">  <i class="bi bi-trash-fill"></i>Sil</a>
-                                            <a asp-controller="ProductCategories" asp-action="Update" asp-route-id="@item.Id" class="btn btn-primary" aria-current="page"> <i class="bi bi-pencil-square"></i>Dəyiş</a>
+                                            <a asp-controller="ProductCategories" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger" aria-current="page"><i class="bi bi-trash-fill"></i>Sil</a>
+                                            <a asp-controller="ProductCategories" asp-action="Update" asp-route-id="@item.Id" class="btn btn-primary" aria-current="page"><i class="bi bi-pencil-square"></i>Düzəliş et</a>
                                         </td>
                                     </tr>
                                 }
-
-
                             }
-
-
                         </tbody>
                     </table>
                 </div>
-
-
             </div>
         </div>
     </div>
-
 </div>
