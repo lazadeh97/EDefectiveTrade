@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using EDefectiveTrade.Business.DTOs.Common;
-using EDefectiveTrade.Business.Exceptions;
 using EDefectiveTrade.Business.Services.Interfaces;
 using EDefectiveTrade.Core.Entities;
 using EDefectiveTrade.Core.Interfaces;
@@ -18,7 +17,9 @@ namespace EDefectiveTrade.Business.Services.Implementations
     {
         private readonly IGenericRepository<TEntity> _genericRepository;
         private readonly IMapper _mapper;
-        public GenericService(IGenericRepository<TEntity> genericRepository, IMapper mapper, ILogger<GenericService<DTOs.ProductCategory.ProductCategoryDTO, ProductCategory>> logger)
+
+        public GenericService(IGenericRepository<TEntity> genericRepository, 
+            IMapper mapper)
         {
             _genericRepository = genericRepository;
             _mapper = mapper;

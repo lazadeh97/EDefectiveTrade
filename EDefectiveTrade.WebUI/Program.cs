@@ -17,14 +17,7 @@ builder.Services.AddServices();
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddAutoMapper(typeof(CustomMapper));
-
-builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-builder.Services.AddScoped(typeof(IGenericService<,>), typeof(GenericService<,>));
-builder.Services.AddScoped<IProductCategoryRepository, ProductCategoryRepository>();
-builder.Services.AddScoped<IProductCategoryService, ProductCategoryService>();
-
 builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
-
 
 builder.Services.AddFluentValidationAutoValidation();
 builder.Services.AddFluentValidationClientsideAdapters();

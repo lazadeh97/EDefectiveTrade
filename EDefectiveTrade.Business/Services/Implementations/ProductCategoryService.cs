@@ -15,10 +15,14 @@ namespace EDefectiveTrade.Business.Services.Implementations
     public class ProductCategoryService : GenericService<ProductCategoryDTO, ProductCategory>, IProductCategoryService
     {
         public ProductCategoryService(IGenericRepository<ProductCategory> genericRepository,
-            IMapper mapper, 
-            ILogger<GenericService<ProductCategoryDTO,
-                ProductCategory>> logger)
-            : base(genericRepository, mapper, logger)
+            IMapper mapper
+            //, 
+            //ILogger<GenericService<ProductCategoryDTO,
+            //    ProductCategory>> logger
+            )
+            : base(genericRepository, mapper
+                  //, logger
+                  )
         {
         }
     }
