@@ -9,5 +9,6 @@ namespace EDefectiveTrade.Core.Entities
 {
     public class AppUser : IdentityUser
     {
+        public List<Product> Products { get; set; }
     }
 }

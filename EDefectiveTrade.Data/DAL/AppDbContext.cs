@@ -18,12 +18,12 @@ namespace EDefectiveTrade.Data.DAL
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.ApplyConfigurationsFromAssembly(typeof(AppDbContext).Assembly);
+            //builder.ApplyConfigurationsFromAssembly(typeof(AppDbContext).Assembly);
             base.OnModelCreating(builder);
         }
 
-        public DbSet<AppUser> AppUsers { get; set; }
-        public DbSet<AppRole> AppRoles{ get; set; }
+        //public DbSet<AppUser> AppUsers { get; set; }
+        //public DbSet<AppRole> AppRoles{ get; set; }
         public DbSet<City> Cities { get; set; }
         public DbSet<Country> Countries { get; set; }
         public DbSet<Help> Helps { get; set; }
@@ -31,5 +31,6 @@ namespace EDefectiveTrade.Data.DAL
         public DbSet<ProductCategory> ProductCategories { get; set; }
         public DbSet<ProductHistory> ProductHistories { get; set; }
         public DbSet<ProductImage> ProductImages { get; set; }
+        public DbSet<Payment> Payments { get; set; }
     }
 }
