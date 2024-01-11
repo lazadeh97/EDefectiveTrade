@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace EDefectiveTrade.Core.Entities
 {
-    public class ProductImage : BaseEntity
+    public class Favorites : BaseEntity
     {
-        public string ImageUrl { get; set; }
-        public string ImageTitle { get; set; }
         public Guid ProductId { get; set; }
+        public Guid UserId { get; set; }
         public Product? Product { get; set; }
+        public AppUser? User { get; set; }
     }
 }

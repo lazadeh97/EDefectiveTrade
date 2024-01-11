@@ -27,6 +27,7 @@ namespace EDefectiveTrade.Data.DAL
         public DbSet<City> Cities { get; set; }
         public DbSet<Country> Countries { get; set; }
         public DbSet<Help> Helps { get; set; }
+        public DbSet<Favorites> Favorites { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductCategory> ProductCategories { get; set; }
         public DbSet<ProductHistory> ProductHistories { get; set; }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EDefectiveTrade.Core.Interfaces
 {
-    public interface IGenericRepository<TEntity> where TEntity : BaseEntity, new()
+    public interface IGenericRepository<TEntity> where TEntity : class, new() 
     {
         Task<TEntity> GetByIdAsync(string id);
         IQueryable<TEntity> GetAll();

@@ -14,6 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EDefectiveTrade.Core\EDefectiveTrade.Core.csproj" />
+    <ProjectReference Include="..\EDefectiveTrade.Data\EDefectiveTrade.Data.csproj" />
   </ItemGroup>
 
 </Project>

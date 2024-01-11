@@ -8,9 +8,13 @@ namespace EDefectiveTrade.Core.Entities
 {
     public class ProductCategory:BaseEntity
     {
+        public ProductCategory()
+        {
+            this.Products = new List<Product>();
+        }
         public string Name { get; set; }
         public string Description { get; set; }
         public Guid? ParentId { get; set; }
-        public List<Product> Products { get; set; }
+        public List<Product> Products { get; set; } 
     }
 }

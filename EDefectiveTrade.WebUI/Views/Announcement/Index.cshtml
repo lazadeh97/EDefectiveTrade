@@ -1,0 +1,126 @@
+﻿@model EDefectiveTrade.Business.DTOs.Product.ProductDTO
+
+@{
+    ViewData["Title"] = "Announcement Page";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="assets/css-dep/img/logo.ico">
+    <link rel="stylesheet" href="assets/css/plugins.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <partial name="_Header" />
+    <section class="secondary-menu">
+        <div class="container">
+            <a class="btn btn-back btn-back-sm" asp-controller="Home" asp-action="Index">
+                <img src="assets/img/left.svg" alt="left" />
+                Geri
+            </a>
+
+            <div class="actions">
+                <a href="favorites.html" class="action">
+                    <div class="t-center">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             width="30"
+                             height="27"
+                             viewBox="0 0 30 27"
+                             fill="none">
+                            <path d="M3.67601 14.8623L14.3153 24.8568C14.6398 25.1616 14.802 25.314 15 25.314C15.198 25.314 15.3602 25.1616 15.6847 24.8568L26.324 14.8623C29.2582 12.1059 29.6146 7.5699 27.1467 4.3891L26.6827 3.79102C23.7304 -0.0141273 17.8044 0.624019 15.73 4.97048C15.437 5.58444 14.563 5.58444 14.27 4.97048C12.1956 0.62402 6.26958 -0.0141292 3.31732 3.79102L2.85328 4.3891C0.385422 7.5699 0.741745 12.1059 3.67601 14.8623Z"
+                                  stroke="#585354"
+                                  stroke-width="2" />
+                        </svg>
+                    </div>
+                    <p>Bəyəndim</p>
+                </a>
+                <div class="action"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="new-item">
+        <div class="container">
+            <form action="" method="post">
+                <h1>Yeni elan</h1>
+                <div class="card">
+                    <div class="form-item-wrapper">
+                        <label for="category">Kateqoriya</label>
+                        <select name="category" id="category">
+                            <option value="" disabled selected>Seçin</option>
+                            <option value="volvo">Volvo</option>
+                            <option value="saab">Saab</option>
+                            <option value="opel">Opel</option>
+                            <option value="audi">Audi</option>
+                        </select>
+                    </div>
+                    <div class="form-item-wrapper">
+                        <label for="category">Şəhər</label>
+                        <select name="category" id="category">
+                            <option value="" disabled selected>Seçin</option>
+                            <option value="volvo">Volvo</option>
+                            <option value="saab">Saab</option>
+                            <option value="opel">Opel</option>
+                            <option value="audi">Audi</option>
+                        </select>
+                    </div>
+                    <div class="form-item-wrapper">
+                        <label for="price">Qiymət</label>
+                        <input name="price" type="text" placeholder="Daxil edin">
+                    </div>
+
+                    <div class="form-item-wrapper">
+                        <label for="message">Məzmun</label>
+                        <textarea name="message" id="message" cols="30" rows="8" placeholder="Yazın"></textarea>
+                    </div>
+                </div>
+
+                <h1>Əlaqə məlumatları</h1>
+                <div class="card">
+                    <div>
+                        <label for="name">Ad</label>
+                        <input name="name" type="text" placeholder="Daxil edin">
+                    </div>
+                    <div class="form-item-wrapper">
+                        <label for="email">Email</label>
+                        <input name="email" type="email" placeholder="Daxil edin">
+                    </div>
+                    <div class="form-item-wrapper">
+                        <label for="phone">Mobil nömrə</label>
+                        <input name="phone" type="text" placeholder="Daxil edin">
+                    </div>
+                </div>
+
+                <div class="action-wrapper">
+                    <a type="submit" href="#" class="btn btn-primary">Davam et</a>
+                    <a type="btn" href="#" class="btn btn-secondary">İmtina</a>
+                </div>
+            </form>
+            <div class="rules-wrapper">
+                <h2>Xarab.az qaydaları</h2>
+                <div class="rules">
+                    <p>Eyni elanı bir neçə dəfə təqdim etməyin.</p>
+                    <p>
+                        Təsvir və ya şəkillərdə telefon, email və ya sayt ünvanı göstərməyin.
+                    </p>
+                    <p>
+                        Ad yerində qiymət yazmayın - bunun üçün ayrıca yer var.
+                    </p>
+                    <p>Qadağan olunmuş məhsulları satmayın.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <partial name="_Footer" />
+
+</body>
+</html>

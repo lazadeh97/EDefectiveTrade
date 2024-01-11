@@ -10,6 +10,10 @@ namespace EDefectiveTrade.Business.DTOs.Product
 {
     internal class SaveProductDto
     {
+        public SaveProductDto()
+        {
+            this.Images = new List<ProductImage>();
+        }
         public string Title { get; set; }
         public decimal Price { get; set; }
         public string Description { get; set; }

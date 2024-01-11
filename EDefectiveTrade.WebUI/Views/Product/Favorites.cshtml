@@ -1,0 +1,209 @@
+﻿@{
+    ViewData["Title"] = "Favorites Page";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="assets/css-dep/img/logo.ico">
+    <link rel="stylesheet" href="assets/css/plugins.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <partial name="_Header" />
+    <section class="secondary-menu">
+        <div class="container">
+            <a class="btn btn-back btn-back-sm" asp-controller="Home" asp-action="Index">
+                <img src="assets/img/left.svg" alt="left" />
+                Geri
+            </a>
+
+            <div class="actions">
+                <a href="favorites.html" class="action">
+                    <div class="t-center">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             width="30"
+                             height="27"
+                             viewBox="0 0 30 27"
+                             fill="none">
+                            <path d="M3.67601 14.8623L14.3153 24.8568C14.6398 25.1616 14.802 25.314 15 25.314C15.198 25.314 15.3602 25.1616 15.6847 24.8568L26.324 14.8623C29.2582 12.1059 29.6146 7.5699 27.1467 4.3891L26.6827 3.79102C23.7304 -0.0141273 17.8044 0.624019 15.73 4.97048C15.437 5.58444 14.563 5.58444 14.27 4.97048C12.1956 0.62402 6.26958 -0.0141292 3.31732 3.79102L2.85328 4.3891C0.385422 7.5699 0.741745 12.1059 3.67601 14.8623Z"
+                                  stroke="#585354"
+                                  stroke-width="2" />
+                        </svg>
+                    </div>
+                    <p>Bəyəndim</p>
+                </a>
+                <div class="action"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="favorites">
+        <div class="container">
+            <h1>Bəyəndiklərim</h1>
+            <div class="frame-4">
+                <a href="product-details.html" class="product-card">
+                    <img class="product-img" src="assets/img/product-1.png" alt="product" />
+                    <div class="actions">
+                        <div class="action-wrapper liked">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                 width="30"
+                                 height="27"
+                                 viewBox="0 0 30 27"
+                                 fill="none">
+                                <path d="M3.67601 14.8623L14.3153 24.8568C14.6398 25.1616 14.802 25.314 15 25.314C15.198 25.314 15.3602 25.1616 15.6847 24.8568L26.324 14.8623C29.2582 12.1059 29.6146 7.5699 27.1467 4.3891L26.6827 3.79102C23.7304 -0.0141273 17.8044 0.624019 15.73 4.97048C15.437 5.58444 14.563 5.58444 14.27 4.97048C12.1956 0.62402 6.26958 -0.0141292 3.31732 3.79102L2.85328 4.3891C0.385422 7.5699 0.741745 12.1059 3.67601 14.8623Z"
+                                      stroke="#585354"
+                                      stroke-width="2" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <h2 class="price">40 azn</h2>
+                        <p class="product-name">iPhone 8</p>
+                        <p class="date">
+                            <img src="assets/img/clock.svg" alt="date" />
+                            10.11.2023
+                        </p>
+                    </div>
+                </a>
+                <a href="product-details.html" class="product-card">
+                    <img class="product-img" src="assets/img/product-1.png" alt="product" />
+                    <div class="actions">
+                        <div class="action-wrapper liked">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                 width="30"
+                                 height="27"
+                                 viewBox="0 0 30 27"
+                                 fill="none">
+                                <path d="M3.67601 14.8623L14.3153 24.8568C14.6398 25.1616 14.802 25.314 15 25.314C15.198 25.314 15.3602 25.1616 15.6847 24.8568L26.324 14.8623C29.2582 12.1059 29.6146 7.5699 27.1467 4.3891L26.6827 3.79102C23.7304 -0.0141273 17.8044 0.624019 15.73 4.97048C15.437 5.58444 14.563 5.58444 14.27 4.97048C12.1956 0.62402 6.26958 -0.0141292 3.31732 3.79102L2.85328 4.3891C0.385422 7.5699 0.741745 12.1059 3.67601 14.8623Z"
+                                      stroke="#585354"
+                                      stroke-width="2" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <h2 class="price">40 azn</h2>
+                        <p class="product-name">iPhone 8</p>
+                        <p class="date">
+                            <img src="assets/img/clock.svg" alt="date" />
+                            10.11.2023
+                        </p>
+                    </div>
+                </a>
+                <a href="product-details.html" class="product-card">
+                    <img class="product-img" src="assets/img/product-1.png" alt="product" />
+                    <div class="actions">
+                        <div class="action-wrapper liked">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                 width="30"
+                                 height="27"
+                                 viewBox="0 0 30 27"
+                                 fill="none">
+                                <path d="M3.67601 14.8623L14.3153 24.8568C14.6398 25.1616 14.802 25.314 15 25.314C15.198 25.314 15.3602 25.1616 15.6847 24.8568L26.324 14.8623C29.2582 12.1059 29.6146 7.5699 27.1467 4.3891L26.6827 3.79102C23.7304 -0.0141273 17.8044 0.624019 15.73 4.97048C15.437 5.58444 14.563 5.58444 14.27 4.97048C12.1956 0.62402 6.26958 -0.0141292 3.31732 3.79102L2.85328 4.3891C0.385422 7.5699 0.741745 12.1059 3.67601 14.8623Z"
+                                      stroke="#585354"
+                                      stroke-width="2" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <h2 class="price">40 azn</h2>
+                        <p class="product-name">iPhone 8</p>
+                        <p class="date">
+                            <img src="assets/img/clock.svg" alt="date" />
+                            10.11.2023
+                        </p>
+                    </div>
+                </a>
+                <a href="product-details.html" class="product-card">
+                    <img class="product-img" src="assets/img/product-1.png" alt="product" />
+                    <div class="actions">
+                        <div class="action-wrapper liked">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                 width="30"
+                                 height="27"
+                                 viewBox="0 0 30 27"
+                                 fill="none">
+                                <path d="M3.67601 14.8623L14.3153 24.8568C14.6398 25.1616 14.802 25.314 15 25.314C15.198 25.314 15.3602 25.1616 15.6847 24.8568L26.324 14.8623C29.2582 12.1059 29.6146 7.5699 27.1467 4.3891L26.6827 3.79102C23.7304 -0.0141273 17.8044 0.624019 15.73 4.97048C15.437 5.58444 14.563 5.58444 14.27 4.97048C12.1956 0.62402 6.26958 -0.0141292 3.31732 3.79102L2.85328 4.3891C0.385422 7.5699 0.741745 12.1059 3.67601 14.8623Z"
+                                      stroke="#585354"
+                                      stroke-width="2" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <h2 class="price">40 azn</h2>
+                        <p class="product-name">iPhone 8</p>
+                        <p class="date">
+                            <img src="assets/img/clock.svg" alt="date" />
+                            10.11.2023
+                        </p>
+                    </div>
+                </a>
+                <a href="product-details.html" class="product-card">
+                    <img class="product-img" src="assets/img/product-1.png" alt="product" />
+                    <div class="actions">
+                        <div class="action-wrapper liked">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                 width="30"
+                                 height="27"
+                                 viewBox="0 0 30 27"
+                                 fill="none">
+                                <path d="M3.67601 14.8623L14.3153 24.8568C14.6398 25.1616 14.802 25.314 15 25.314C15.198 25.314 15.3602 25.1616 15.6847 24.8568L26.324 14.8623C29.2582 12.1059 29.6146 7.5699 27.1467 4.3891L26.6827 3.79102C23.7304 -0.0141273 17.8044 0.624019 15.73 4.97048C15.437 5.58444 14.563 5.58444 14.27 4.97048C12.1956 0.62402 6.26958 -0.0141292 3.31732 3.79102L2.85328 4.3891C0.385422 7.5699 0.741745 12.1059 3.67601 14.8623Z"
+                                      stroke="#585354"
+                                      stroke-width="2" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <h2 class="price">40 azn</h2>
+                        <p class="product-name">iPhone 8</p>
+                        <p class="date">
+                            <img src="assets/img/clock.svg" alt="date" />
+                            10.11.2023
+                        </p>
+                    </div>
+                </a>
+                <a href="product-details.html" class="product-card">
+                    <img class="product-img" src="assets/img/product-1.png" alt="product" />
+                    <div class="actions">
+                        <div class="action-wrapper liked">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                 width="30"
+                                 height="27"
+                                 viewBox="0 0 30 27"
+                                 fill="none">
+                                <path d="M3.67601 14.8623L14.3153 24.8568C14.6398 25.1616 14.802 25.314 15 25.314C15.198 25.314 15.3602 25.1616 15.6847 24.8568L26.324 14.8623C29.2582 12.1059 29.6146 7.5699 27.1467 4.3891L26.6827 3.79102C23.7304 -0.0141273 17.8044 0.624019 15.73 4.97048C15.437 5.58444 14.563 5.58444 14.27 4.97048C12.1956 0.62402 6.26958 -0.0141292 3.31732 3.79102L2.85328 4.3891C0.385422 7.5699 0.741745 12.1059 3.67601 14.8623Z"
+                                      stroke="#585354"
+                                      stroke-width="2" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <h2 class="price">40 azn</h2>
+                        <p class="product-name">iPhone 8</p>
+                        <p class="date">
+                            <img src="assets/img/clock.svg" alt="date" />
+                            10.11.2023
+                        </p>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <partial name="_Footer" />
+
+    <script src="assets/js/plugins.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="assets/js/scripts.js"></script>
+</body>
+</html>

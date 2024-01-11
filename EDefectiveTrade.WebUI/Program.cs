@@ -24,6 +24,11 @@ builder.Services
     .AddEntityFrameworkStores<AppDbContext>()
     .AddDefaultTokenProviders();
 
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30);
+});
+
 builder.Services.AddAutoMapper(typeof(CustomMapper));
 builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 
@@ -42,6 +47,8 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
+
+app.UseSession();
 app.UseRouting();
 
 app.UseAuthorization();

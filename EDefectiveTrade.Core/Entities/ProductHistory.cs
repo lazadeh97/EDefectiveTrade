@@ -8,13 +8,18 @@ namespace EDefectiveTrade.Core.Entities
 {
     public class ProductHistory : BaseEntity
     {
-        public string Description { get; set; }
-        public int ViewCount { get; set; }
-        public Guid ProductId { get; set; }
-        public Guid ProductCategoryId { get; set; }
+        public ProductHistory() 
+        {
+            this.Products = new List<Product>();
+            this.ProductCategories = new List<ProductCategory>();
+        }
+        public string? Description { get; set; }
+        public int? ViewCount { get; set; }
+        public Guid? ProductId { get; set; }
+        public Guid? ProductCategoryId { get; set; }
 
-        public List<Product> Products { get; set; }
-        public List<ProductCategory> ProductCategories { get; set; }
+        public List<Product>? Products { get; set; }
+        public List<ProductCategory>? ProductCategories { get; set; }
 
     }
 }

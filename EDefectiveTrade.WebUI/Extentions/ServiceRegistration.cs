@@ -27,6 +27,7 @@ namespace EDefectiveTrade.WebUI.Extentions
 
             services.AddScoped<IProductCategoryRepository, ProductCategoryRepository>();
             services.AddScoped<IProductCategoryService, ProductCategoryService>();
+            services.AddScoped<IAppUserService, UserService>();
         }
     }
 }
