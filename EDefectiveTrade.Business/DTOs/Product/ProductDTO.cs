@@ -20,7 +20,6 @@ namespace EDefectiveTrade.Business.DTOs.Product
         public string Description { get; set; }
         public Guid? ProductCategoryId { get; set; }
         public City? City { get; set; }
-        public Category? ProductCategory { get; set; } //categoryler nerdeeee bilmirem
         public AppUser? User { get; set; }
         public List<ProductImage> Images { get; set; }
         public AnnouncementType AnnouncementType { get; set; }
